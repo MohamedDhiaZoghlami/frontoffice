@@ -1,0 +1,5 @@
+<div class="wrapper" >
+    <div class="content" *ngFor="let p of productList">
+        <app-product-card [name]="p.name" [price]="p.price" [promo]="p.promo"></app-product-card>
+    </div>    
+</div>

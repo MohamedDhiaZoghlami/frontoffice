@@ -1,0 +1,12 @@
+{
+    "products" : [
+        {"id":1,"name":"asba leha","price":69,"category":"Food","promo":0.5},
+        {"id":2,"name":"asba leha","price":69,"category":"Food","promo":0.7},
+        {"id":3,"name":"asba leha","price":69,"category":"Food","promo":0.8},
+        {"id":4,"name":"asba leha","price":69,"category":"Food","promo":0},
+        {"id":5,"name":"asba leha","price":69,"category":"Food","promo":0.2},
+        {"id":6,"name":"asba leha","price":69,"category":"Food","promo":0.1},
+        {"id":7,"name":"asba leha","price":69,"category":"Food","promo":0},
+        {"id":8,"name":"asba leha","price":69,"category":"Food","promo":0.3}
+    ]
+}

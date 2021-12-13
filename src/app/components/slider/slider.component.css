@@ -1,0 +1,6 @@
+img {
+  height: 90vh;
+}
+.carousel-caption {
+  backdrop-filter: blur(10px);
+}

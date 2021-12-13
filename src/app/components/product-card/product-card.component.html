@@ -1,0 +1,15 @@
+<div class="Cardcontainer">
+    <img src="../../../assets/SliderOne.jpg" />
+    <div class="bottom">
+        <div class="bottom_left">
+            <h1>{{name}}</h1>
+        <p class="nopromo" *ngIf="!promotion">{{price}}dt</p>
+        <p class="promo" *ngIf="promotion">{{price}}dt</p>
+        <p *ngIf="promotion">{{finalPrice}}dt</p>
+        </div>
+        <hr />
+        <div class="bottom_right">
+            <i class="fas fa-cart-plus"></i>
+        </div>
+    </div>
+</div>
