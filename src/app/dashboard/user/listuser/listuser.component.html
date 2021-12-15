@@ -1,0 +1,44 @@
+<div class="title">
+    <h1>All users : </h1>
+    <hr>
+  </div>
+  <a class="btn btn-outline-dark btn-lg">Number of fidele users: {{nbrFidele}} </a>
+  <a class="btn btn-outline-dark btn-lg">Number of ordinaire users: {{nbrOrdinaire}} </a>
+  <a class="btn btn-outline-dark btn-lg">Number of premuim users: {{nbrPremuim}} </a>
+  <hr>
+  <input placeholder="search by customer category " type="text" name="category" class="form-control ms-100"
+  [(ngModel)]="inputCategory">
+<br>
+  <div class="wrapper">
+    <div class="table_wrapper ">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Firstname</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Username</th>
+                <th scope="col">Birthdate</th>
+                <th scope="col">Email</th>
+                <th scope="col">CategorieClient</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let user of users" [hidden]="user.categorieclient!=inputCategory
+            && inputCategory">
+              <tr >
+                <th scope="row">{{user.id}}</th>
+               
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.birthdate  }}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.categorieclient}}</td>  
+                <td><button  class="btn btn-danger" (click)="deleteUser(user.id)"  >Delete</button ></td>
+                  <td><a  class="btn btn-warning" [routerLink]="['./update/',user.id]"  >UpdateCategorie</a></td> 
+              </tr>
+            </tbody>
+          </table>
+    </div>

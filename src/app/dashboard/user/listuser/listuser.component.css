@@ -1,0 +1,10 @@
+table {
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 15px;
+  }

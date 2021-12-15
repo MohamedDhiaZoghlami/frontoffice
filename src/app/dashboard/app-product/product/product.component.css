@@ -1,0 +1,22 @@
+.button-update {
+  margin-left: 25px;
+}
+
+button.btn.btn-light {
+  position: absolute;
+  right: 0;
+}
+h3 {
+  text-align: center;
+  color: green;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.withPromotion {
+  text-align: left;
+  margin-left: 3em;
+  font-size: 1em;
+  color: black;
+  font-weight: normal;
+  text-decoration: line-through;
+}

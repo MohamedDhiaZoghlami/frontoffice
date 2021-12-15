@@ -1,10 +1,15 @@
+
 <nav (scroll)="onscroll()" [ngClass]="notif ? 'fixed' : 'notfixed' ">
     <h1><i class="fas fa-shopping-cart"></i>Echryy</h1>
     <ul [ngClass]="list ? 'hey' : 'not' ">
-      <li (click)="onclicky()"><a href="#">Products</a></li>
-      <li><a href="#">Faq's</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Sign Up</a></li>
+      <li (click)="onclicky()"><a href="#products">Products</a></li>
+      <li><a href="#accordionExample">Faq's</a></li>
+      <li><a *ngIf="navitem" routerLink="/login">Login</a></li>
+      <li><a *ngIf="navitem" routerLink="/signup">Sign Up</a></li>
+      <li><a *ngIf="adminNotif" routerLink="/dashboard">Dashboard</a></li>
+      <li><a *ngIf="!navitem" routerLink="/myprofil">My profile </a></li>
+      <li><a *ngIf="!navitem" (click)="logout()" >Logout </a></li>
     </ul>
     <button (click)="onclicky()">click</button>
   </nav>
+ 

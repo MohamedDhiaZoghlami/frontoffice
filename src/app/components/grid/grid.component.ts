@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/api.service';
-import { Product } from 'src/models/Product';
+import { Product } from 'src/app/models/Product';
 
 @Component({
   selector: 'app-grid',

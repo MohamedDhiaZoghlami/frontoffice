@@ -1,0 +1,24 @@
+<div class="wrapper" >
+    <div class="container">
+            <h1>Product Category : <span>{{filterName}}</span> </h1>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Product id</th>
+                    <th>Product Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let d of filteredData">
+                    <th scope="row">{{d.id}}</th>
+                    <td><img src="../../../../../assets/{{d.photo}}" /></td>
+                    <td>{{d.libelle}}</td>
+                    <td>{{d.prixUnitaire}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+</div>
+

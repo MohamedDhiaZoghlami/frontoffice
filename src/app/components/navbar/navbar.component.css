@@ -1,6 +1,6 @@
 .fixed {
   background-color: white;
-  color: #000;
+  color: #007bff;
   position: fixed;
   top: 0;
   transition: 0.3s linear;
@@ -16,7 +16,7 @@
   z-index: 1000;
 }
 .fixed a {
-  color: #000;
+  color: #007bff;
 }
 .fixed a:hover {
   border-bottom: 1px solid #000;
@@ -55,6 +55,7 @@ a:hover {
   background-color: #fff;
   border-radius: 5px;
   transition: all ease-in-out 0.3s;
+  cursor: pointer;
 }
 button {
   display: none;

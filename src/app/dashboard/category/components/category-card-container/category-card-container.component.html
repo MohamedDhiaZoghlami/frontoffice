@@ -1,0 +1,75 @@
+<div class="title">
+  <h1>Numbers of Products for each category</h1>
+  <hr>
+</div>
+
+<app-categ-prod-container></app-categ-prod-container>
+
+<div class="title">
+  <h1>All categories : </h1>
+  <hr>
+</div>
+
+<div class="wrapper">
+    <div class="table_wrapper ">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Reference</th>
+                <th scope="col">Max. quantity</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of categories">
+                <th scope="row">{{category.id}}</th>
+                <td>{{category.name}}</td>
+                <td>{{category.ref}}</td>
+                <td>{{category.quantity}}</td>
+                <td  class="icon edit" (click)="updateForm(category.id,f)"><i class="far fa-edit"></i></td>
+                <td  class="icon delete" (click)="deleteCategories(category.id,category)"><i class="far fa-trash-alt" ></i></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="form_wrapper">
+      <form #f="ngForm" (ngSubmit)="postCategoryDetails(f,category)" autocomplete="off">
+        <div class="form-group">
+            <label>Category Name :</label>
+            <input type="text" name="name" class="form-control" [(ngModel)]="category.name" #t="ngModel" required minlength="3">
+        </div>
+        <div class="alert alert-danger" *ngIf="t.invalid && (t.dirty || t.touched)">
+            <div *ngIf="t.errors?.['required']">this field is required.</div>
+            <div *ngIf="t.errors?.['minlength']">this field has to have at least 3 characters.</div>
+        </div>
+        
+        <div class="form-group">
+            <label>Category Reference :</label>
+            <input type="text" name="ref" class="form-control" [(ngModel)]="category.ref" #r="ngModel" required pattern="[#][a-zA-Z0-9]+$">
+        </div>
+        <div class="alert alert-danger" *ngIf="r.invalid && (r.dirty || r.touched)">
+          <div *ngIf="r.errors?.['required']">this field is required.</div>
+          <div *ngIf="r.errors?.['pattern']">this field has to start with ' # '.</div>
+      </div>
+        <div class="form-group">
+            <label>Maximum Quantity :</label>
+            <input type="number" name="quantity" class="form-control" [(ngModel)]="category.quantity" #q="ngModel" required pattern="[1-9][0-9][0-9]">
+        </div>
+        <div class="alert alert-danger" *ngIf="q.invalid && (q.dirty || q.touched)">
+            <div *ngIf="q.errors?.['required']">this field is required.</div>
+            <div *ngIf="q.errors?.['pattern']">this field can only contains numbers without starting with 0.</div>
+        </div>
+        <button class="btn btn-warning" [disabled]="f.invalid" type="submit" >Save</button>
+    </form>
+          
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal_succes" *ngIf="modalOpen">
+  <div class="alert alert-success" role="alert">
+    Your opertation has been succefully done ! 
+  </div>
+</div>

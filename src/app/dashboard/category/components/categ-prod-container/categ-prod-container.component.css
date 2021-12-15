@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 95%;
+  margin-left: 30px;
+}
+@media screen and (max-width: 1040px) {
+  .wrapper {
+    justify-content: center;
+  }
+}

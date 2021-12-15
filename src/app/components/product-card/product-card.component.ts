@@ -9,6 +9,8 @@ export class ProductCardComponent implements OnInit {
   @Input() name!:string;
   @Input() price!:number;
   @Input() promo!:number;
+  @Input() description!:string;
+  @Input() photo!:string;
   promotion:boolean=false;
   finalPrice!:string;
   constructor() { }

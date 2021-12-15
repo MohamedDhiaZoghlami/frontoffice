@@ -1,0 +1,58 @@
+<div class="wrappers">
+    <a routerLink="/">Return Home</a>
+    <div class="containers">
+        <form [formGroup]="myForm">
+            <h3>My Profile</h3>
+            <label>First Name : </label>
+            <input class="form-control" name="firstname" placeholder="FIRST NAME" type="text" minlength="3" [(ngModel)]="currentUser.firstname"  formControlName="firstname">    
+           <div class="errormsg" *ngIf="myForm.controls['firstname'].invalid && myForm.controls['firstname'].touched">
+            <small *ngIf="myForm.controls['firstname'].hasError('required')">First name required</small>
+            <small *ngIf="myForm.controls['firstname'].hasError('minlength')">minlength is equal to 3</small>
+            </div> 
+            <label>Last Name : </label>
+            <input class="form-control" name="Lastname" placeholder="LAST NAME" type="text" minlength="3"[(ngModel)]="currentUser.lastname"  formControlName="lastname">   
+           <div class="errormsg" *ngIf="myForm.controls['lastname'].invalid && myForm.controls['lastname'].touched">
+            <small *ngIf="myForm.controls['lastname'].hasError('required')">Last name required</small>
+            <small *ngIf="myForm.controls['lastname'].hasError('minlength')">minlength is equal to 3</small>
+            </div>
+            <label>User Name : </label>
+            <input class="form-control" name="username" type="text" placeholder="USERNAME" minlength="3" [(ngModel)]="currentUser.username"  formControlName="username">   
+           <div class="errormsg" *ngIf="myForm.controls['username'].invalid && myForm.controls['username'].touched">
+            <small *ngIf="myForm.controls['username'].hasError('required')">Username required</small>
+            <small *ngIf="myForm.controls['username'].hasError('minlength')">minlength is equal to 3</small>
+            </div> 
+            <label>BirthDate : </label>
+            <input class="form-control" name="birthday" type="date" placeholder="BIRTHDATE"  
+            [ngModel]= "currentUser.birthdate | date: 'yyyy-MM-dd'" (ngModelChange)=" currentUser.birthdate= $event" 
+             formControlName="birthday">  
+           <span class="form-control-comment">
+            (Ex. : 31/05/1970)
+          </span>   
+             <div class="errormsg" *ngIf="myForm.controls['birthday'].invalid && myForm.controls['birthday'].touched">
+            <small *ngIf="myForm.controls['birthday'].hasError('required')">BirthDate is required</small> 
+            </div>
+            <label>Email : </label>
+            <input class="form-control" name="email" type="email" placeholder="EMAIL" 
+            [(ngModel)]="currentUser.email"  formControlName="email">  
+           <div class="errormsg" *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+            <small *ngIf="myForm.controls['email'].hasError('required')">Email is required</small> 
+            </div>
+            <label>Password :  </label>
+            <input class="form-control" name="password" type="password" placeholder="PASSWORD"  pattern = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" [(ngModel)]="currentUser.password"  formControlName="password"> 
+            <div class="errormsg" *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
+            <small *ngIf="myForm.controls['password'].hasError('required')">Password is required</small> 
+            <small *ngIf="myForm.controls['password'].hasError('pattern')">The password contains at least eight characters, at least one letter and one number</small>
+            </div> 
+            <label> Confirm Password :  </label>
+            <input class="form-control" name="confpass" placeholder="CONFIRM PASSWORD" type="password" [(ngModel)]="currentUser.confpass"  formControlName="confpass"> 
+            <div class="errormsg" *ngIf="myForm.controls['confpass'].invalid && myForm.controls['confpass'].touched">
+            <small *ngIf="myForm.controls['confpass'].hasError('required')">Confirm password is required</small> 
+            <small class="errormsg" *ngIf="myForm.controls['confpass'].value!=myForm.controls['confpass'].value
+             && myForm.controls['confpass'].dirty">Please give a valid password
+            </small> 
+            </div> 
+    
+            <button class="btn btn-success" [disabled]="myForm.invalid || myForm.controls['password'].value!=myForm.controls['confpass'].value" (click)="updateCategorieUser()">Update</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+    <div class="col-lg-6">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>idPromotion</th>
+      <th>Promotion Name</th>
+      <th>Starting Date</th>
+      <th>Ending Date</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of list">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.startingDate}}</td>
+      <td>{{p.endingDate}}</td>
+      <td>{{p.value}}</td>
+      <td  class="icon edit" (click)="updateForm(p.id,f)"><i class="far fa-edit"></i></td>
+      <td  class="icon delete" (click)="deletePromo(p.id,p);checkPromo(listProduct)"><i class="far fa-trash-alt" ></i></td>
+    </tr>
+    </tbody>
+  </table>
+    </div>
+  <div class="form_wrapper gol-lg-6">
+    <form #f="ngForm" (ngSubmit)="postPromoDetails(f,promotions)"  autocomplete="off">
+      <div class="form-group">
+          <label>Promotion Name :</label>
+          <input type="text" name="name" class="form-control" [(ngModel)]="promotions.name" #t="ngModel" required minlength="3">
+      </div>
+      <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+          <div *ngIf="t.errors?.['required']">this field is required.</div>
+          <div *ngIf="t.errors?.['minlength']">this field has to have at least 3 characters.</div>
+      </div>
+      
+      <div class="form-group">
+          <label>Starting Date:</label>
+          <input type="date" name="startingDate" class="form-control" [(ngModel)]="promotions.startingDate" #r="ngModel" required >
+      </div>
+      <div class="alert alert-danger" *ngIf="r.invalid &&  r.touched" >this field is required </div>
+      <div class="form-group">
+          <label>Ending Date :</label>
+          <input type="date" name="endingDate" class="form-control" [(ngModel)]="promotions.endingDate" #q="ngModel" required>
+          <div class="alert alert-danger" *ngIf="q.invalid &&  q.touched">this field is required.</div>
+      </div>
+      <div class="form-group">
+      <label>Promotion value :</label>
+      <input type="number" name="value" class="form-control" [(ngModel)]="promotions.value" #v="ngModel"  min="01" max="90" required>
+        </div>
+        <div class="alert alert-danger" *ngIf="v.invalid &&  v.touched">
+            <div *ngIf="v.errors?.['required']">this field is required.</div>
+            <div *ngIf="v.errors?.['min']||v.errors?.['max']">this value must be between 01 and 90.</div>
+        </div>
+      <button class="btn btn-warning"  [disabled]="f.invalid" type="submit" (click)="checkPromo2(listProduct)" >Save</button>
+  </form>
+  </div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal_succes" *ngIf="modalOpen">
+    <div class="alert alert-success" role="alert">
+      Your opertation has been succefully done ! 
+    </div>
+  </div>
+

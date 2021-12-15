@@ -1,12 +1,204 @@
 {
-    "products" : [
-        {"id":1,"name":"asba leha","price":69,"category":"Food","promo":0.5},
-        {"id":2,"name":"asba leha","price":69,"category":"Food","promo":0.7},
-        {"id":3,"name":"asba leha","price":69,"category":"Food","promo":0.8},
-        {"id":4,"name":"asba leha","price":69,"category":"Food","promo":0},
-        {"id":5,"name":"asba leha","price":69,"category":"Food","promo":0.2},
-        {"id":6,"name":"asba leha","price":69,"category":"Food","promo":0.1},
-        {"id":7,"name":"asba leha","price":69,"category":"Food","promo":0},
-        {"id":8,"name":"asba leha","price":69,"category":"Food","promo":0.3}
-    ]
+  "promotions": [
+    {
+      "name": "amine",
+      "startingDate": "1997-08-22",
+      "endingDate": "2021-12-13",
+      "value": 10,
+      "id": 1
+    },
+    {
+      "name": "test1",
+      "startingDate": "2021-01-01",
+      "endingDate": "2022-01-01",
+      "value": 60,
+      "id": 2
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Food",
+      "ref": "#222",
+      "quantity": 500
+    },
+    {
+      "id": 2,
+      "name": "Tools",
+      "ref": "#228",
+      "quantity": 300
+    },
+    {
+      "id": 3,
+      "name": "Electronics",
+      "ref": "#33",
+      "quantity": 154
+    },
+    {
+      "id": 4,
+      "name": "Health",
+      "ref": "#456",
+      "quantity": 122
+    },
+    {
+      "id": 5,
+      "name": "Music",
+      "ref": "#rrr",
+      "quantity": 456
+    },
+    {
+      "id": 6,
+      "name": "Clothing",
+      "ref": "#aaa",
+      "quantity": 789
+    },
+    {
+      "id": 7,
+      "name": "Kids",
+      "ref": "#456",
+      "quantity": 123
+    },
+    {
+      "name": "Garden",
+      "ref": "#789",
+      "quantity": 123,
+      "id": 8
+    },
+    {
+      "name": "Shoes",
+      "ref": "#fff",
+      "quantity": 123,
+      "id": 9
+    },
+    {
+      "name": "test2",
+      "ref": "#222",
+      "quantity": 123,
+      "id": 10
+    }
+  ],
+  "products": [
+    {
+      "libelle": "some oranges",
+      "prixUnitaire": "100",
+      "photo": "blue.png",
+      "category": "Food",
+      "description": "jomla 9sayyra, kelma thnin. ama lezem nahbet aal starr kima hakka.qsdqsdqsdsdq",
+      "id": "3617",
+      "nouveauPrix": 60,
+      "idPromo": 2
+    },
+    {
+      "libelle": "sawssen",
+      "prixUnitaire": "85",
+      "photo": "5a5e105f9fc8c9351ecc4994.png",
+      "category": "Food",
+      "description": "jomla 9sayyra, kelma thnin. ama lezem nahbet aal starr kima hakka.",
+      "id": "1908",
+      "nouveauPrix": null,
+      "idPromo": 2
+    },
+    {
+      "libelle": "sawssen merjetni",
+      "prixUnitaire": "550",
+      "photo": "58adf596e612507e27bd3c3c.png",
+      "category": "Health",
+      "description": "jomla 9sayyra, kelma thnin. ama lezem nahbet aal starr kima hakka.",
+      "id": "6277",
+      "nouveauPrix": null
+    },
+    {
+      "libelle": "madanina",
+      "prixUnitaire": "85",
+      "photo": "58f36d65a4fa116215a923f8.png",
+      "category": "Health",
+      "description": "jomla 9sayyra, kelma thnin. ama lezem nahbet aal starr kima hakka.",
+      "id": "1129",
+      "nouveauPrix": 76.5,
+      "idPromo": 1
+    },
+    {
+      "libelle": "another card ",
+      "prixUnitaire": "145",
+      "photo": "5a5e10bc9fc8c9351ecc499e.png",
+      "category": "Music",
+      "description": "jomla 9sayyra, kelma thnin. ama lezem nahbet aal starr kima hakka.",
+      "id": "4406",
+      "nouveauPrix": null,
+      "idPromo": 2
+    },
+    {
+      "libelle": "test trah",
+      "prixUnitaire": "185",
+      "photo": "5b51effbc051e602a568ce64.png",
+      "category": "Kids",
+      "description": "test test, this is a description\ntrah w hakka",
+      "id": "1305",
+      "nouveauPrix": 166.5,
+      "idPromo": 1
+    },
+    {
+      "libelle": "test",
+      "prixUnitaire": "85",
+      "photo": "5c50776fbb7e2a029589d254.png",
+      "category": "Health",
+      "description": "lorem ipsum styles hangover from whatever",
+      "id": "7098"
+    },
+    {
+      "libelle": "sqdqsdqsd",
+      "prixUnitaire": "74",
+      "photo": "580b57fbd9996e24bc43c0c9.png",
+      "category": "Electronics",
+      "description": "here i am writing some text in order to satisfy",
+      "id": "8940"
+    },
+    {
+      "nouveauPrix": null,
+      "libelle": "CLCIK",
+      "prixUnitaire": "350",
+      "photo": "58f36d6ca4fa116215a923f9.png",
+      "category": "Garden",
+      "description": "hello everyone lorem ipsum style shit of this ",
+      "id": "6144"
+    }
+  ],
+  "users": [
+    {
+      "firstname": "oussema",
+      "lastname": "selmi",
+      "username": "oussemaselmi",
+      "birthdate": "2021-12-14",
+      "email": "oussema.selmi@esprit.tn",
+      "password": "raed1234",
+      "confpass": "raed1234",
+      "categorieclient": "FIDELE",
+      "isAdmin": false,
+      "id": "6CEaNI_"
+    },
+    {
+      "firstname": "salim",
+      "lastname": "berima",
+      "username": "salimberima",
+      "birthdate": "2021-12-06",
+      "email": "salim.berima@esprit.tn",
+      "password": "raed1234",
+      "confpass": "raed1234",
+      "categorieclient": "ORDINAIRE",
+      "isAdmin": false,
+      "id": "54baoK8"
+    },
+    {
+      "firstname": "raed",
+      "lastname": "jaidi",
+      "username": "raedjaidi",
+      "birthdate": "2021-12-07",
+      "email": "raed.jaidi@esprit.tn",
+      "password": "raed1234",
+      "confpass": "raed1234",
+      "categorieclient": "PREMUIM",
+      "isAdmin": true,
+      "id": "MVKvDGr"
+    }
+  ]
 }

@@ -1,0 +1,47 @@
+<br />
+<div class="card">
+  <div class="dropdown">
+    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <i class="fas fa-grip-vertical"> </i>
+   </button> 
+   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <ul *ngFor="let pro of listPromo " >
+    <li><a class="dropdown-item"  data-target=".bd-example-modal-lg" (click)="newPrice(product,pro)">Add promotion : {{pro.name}}</a></li>  
+     </ul>
+     <ul>
+       <li><a class="dropdown-item"  data-target=".bd-example-modal-lg" (click)="removePromo(product)" >Remove Promotion </a></li> 
+        </ul>
+   </div>
+ </div>
+  <img
+    src="../../../../assets/{{ this.product.photo }}"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h4 style="text-align: center" class="card-title">
+      {{ this.product.libelle }}
+    </h4>
+
+    <p style="text-align: center" class="card-text">
+        {{this.product.description}}
+    </p>
+
+    <h3  [ngClass]="product.nouveauPrix != null ? 'withPromotion' : 'noPromotion'">
+      <p>{{ this.product.prixUnitaire }}DT</p>
+    </h3>
+    <h3>
+      <span>{{ this.product.nouveauPrix }}</span><span *ngIf="product.nouveauPrix!=null">DT</span>
+    </h3>
+    <br/>
+    <button class="btn btn-warning button-update" (click)="updateNotif()">Update</button>
+    &nbsp;
+    <button class="btn btn-danger button-delete " (click)="deleteNotif()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+      <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+    </svg> Delete </button>
+
+
+
+  </div>
+</div>

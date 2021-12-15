@@ -1,8 +1,10 @@
 .wrapper {
+  /* padding: 50px; */
   display: grid;
-  width: 80%;
-  margin: 150px auto;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-gap: 20px;
+  width: 90%;
+  margin: 50px auto;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  row-gap: 20px;
   justify-items: center;
+  /* box-shadow: 1px 5px 25px 10px rgba(35, 35, 56, 0.46); */
 }

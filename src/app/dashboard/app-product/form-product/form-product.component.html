@@ -1,0 +1,109 @@
+<br />
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+  <div class="row mb-3">
+    <label class="col-sm-1 col-form-label margin__title">Title</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" formControlName="title" />
+    </div>
+
+  </div>
+  <div
+    class="alert alert-danger"
+    *ngIf="
+        productForm.controls['title'].invalid &&
+        productForm.controls['title'].touched
+      "
+  >
+    <div *ngIf="productForm.controls['title'].hasError('required')">
+      Title is a required field.
+    </div>
+    <div *ngIf="productForm.controls['title'].hasError('minlength')">
+      MinLength is equal to 3
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-1 col-form-label margin__title">Price</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" formControlName="price" />
+    </div>
+  </div>
+  <div
+    class="alert alert-danger"
+    *ngIf="
+        productForm.controls['price'].invalid &&
+        productForm.controls['price'].touched
+      "
+  >
+    <div *ngIf="productForm.controls['price'].hasError('required')">
+      Price is a required field.
+    </div>
+    <div *ngIf="productForm.controls['price'].hasError('min')">
+      Minimum price is 10DT
+    </div>
+    <div *ngIf="productForm.controls['price'].hasError('max')">
+      Maximum price is 1000DT
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-1 col-form-label margin__title">Category</label>
+    <!-- <div class="col-sm-6">
+      <input type="text" class="form-control" formControlName="category" />
+    </div> -->
+    <div class="col-sm-6">
+      <select formControlName="category">
+        <option *ngFor="let category of categorylist" [value]="category.name">{{category.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div
+    class="alert alert-danger"
+    *ngIf="
+        productForm.controls['category'].invalid &&
+        productForm.controls['category'].touched
+      "
+  >
+    <div *ngIf="productForm.controls['category'].hasError('required')">
+      Category is a required field.
+    </div>
+
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-sm-1 col-form-label margin__title">Picture</label>
+    <div class="col-sm-6">
+      <input
+        class="form-control"
+        type="file"
+        id="formFile"
+        formControlName="photo"
+        (change)="upload($event)"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-1 col-form-label margin__title">Description</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="description" rows="3"></textarea>
+    </div>
+  </div>
+  <div
+    class="alert alert-danger"
+    *ngIf="
+        productForm.controls['description'].invalid &&
+        productForm.controls['description'].touched
+      "
+  >
+    <div *ngIf="productForm.controls['description'].hasError('required')">
+      Description is a required field.
+    </div>
+    <div *ngIf="productForm.controls['description'].hasError('minlength')">
+      The product's description has to be longer.
+    </div>
+
+  </div>
+
+  <br />
+  <button type="submit" class="btn btn-success submit__button"  [disabled]="!productForm.valid">Submit</button>
+</form>

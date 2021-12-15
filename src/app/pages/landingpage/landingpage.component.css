@@ -1,0 +1,17 @@
+.wraptitle {
+  width: 80%;
+  text-align: center;
+  margin: 30px auto;
+}
+h3 {
+  color: #007bff;
+  font-size: 35px;
+  font-weight: 800;
+}
+hr {
+  width: 8%;
+  margin: 0 auto;
+  height: 3px;
+  background-color: #242849;
+  opacity: 1;
+}

@@ -1,0 +1,22 @@
+&nbsp;&nbsp;
+<button class="btn btn-primary margin" (click)="changePage()">
+  {{ buttonString }}
+</button>
+<br />
+<div class="margin row" id="ProductList" *ngIf="!this.isForm">
+  <app-product
+    class="col-md-3"
+    *ngFor="let object of listProduct"
+    [product]="object"
+    (deleteEvent)="deleteProduct($event)"
+    (updateEvent)="updateProduct($event)"
+  ></app-product>
+</div>
+<div id="ProductForm" class="margin" *ngIf="this.isForm">
+  <app-form-product
+    (addEvent)="saveProduct($event)"
+    (changeEvent)="resaveProduct($event)"
+    [updateProduct]="inputProduct"
+    [list]="listProduct"
+  ></app-form-product>
+</div>
